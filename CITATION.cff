@@ -1,0 +1,21 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: NTRUmain_code
+message: >-
+  This code is just for Final year project. Please do not
+  use them to encrypt any private message.
+type: software
+authors:
+  - given-names: Qian
+    family-names: Liu
+    email: hecr_lq@outlook.com
+    affiliation: Sun Yat-sen university
+identifiers:
+  - type: url
+    value: 'https://github.com/LiuTyq/FYP_CODE'
+repository-code: 'https://github.com/LiuTyq/FYP_CODE'
+abstract: >-
+  C++ code for NTRU, including the definition of polynomial
+  ring.
