@@ -5,8 +5,12 @@
 #include <vector>
 #include <initializer_list>
 #include <numeric>
-
+#include <cmath>
 using namespace std;
+
+
+
+
 
 template<typename T>
 class RingBase {
@@ -104,11 +108,6 @@ public:
 
 
 
-
-
-
-
-
 //--------------------% Ring_p 类 % ----------------------
 
 
@@ -116,7 +115,9 @@ public:
 class Ring_p : public RingBase<int> {
 private:
     int p;
-    int degree() const {
+    int primitive_root;        // 原根
+    int primitive_root_inverse; // 原根的逆元
+    int degree() const {        // 获取多项式的度数
         for (int i = coeffs.size() - 1; i >= 0; --i) {
             if (coeffs[i] != 0) return i;
         }
@@ -143,14 +144,17 @@ public:
 
 
      // 计算某个数 a 模 p 的逆元，当 p 为素数时，算法始终成立
-
      int mod_inverse(int a) const; 
      int output_N() const;
 
      Ring_p transfer_N(int N_1) const; // 多项式环的转化
      Ring_p transfer_p(int p_1) const;
      Ring_p inverse() const; // 求取元素逆元
+     Ring_p inverse_ppower() const;
      // Ring_p generate_f(int d) const; // 生成随机多项式 m，其中 m \in \mathcal{T}(d + 1, d)
      Ring center_lift() const;// Center-Lift (中心提升)
+
+
+     
 };
 //--------------------% Ring_p 类 % ----------------------
